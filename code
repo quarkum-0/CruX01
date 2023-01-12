@@ -1,0 +1,209 @@
+#Modules required
+import math
+import random
+
+#Basic values
+pi = math.pi
+e = math.e
+
+def calculator():
+
+    #Starts intro
+    print("WELCOME!!!")
+    Name = input("ENTER YOUR NAME: ")
+    Name = Name.upper()
+    print("HELLO " + Name)
+    
+    #Shows options
+    def options():
+        print("\nOPTIONS")
+        print("ENTER 'add' TO ADD TWO NUMBERS")
+        print("ENTER 'subtract' TO SUBSTRACT TWO NUMBERS")
+        print("ENTER 'multiply' TO MULTIPLY TWO NUMBERS")
+        print("ENTER 'divide' TO DIVIDE TWO NUMBERS")
+        print("ENTER 'more' TO SEE OTHER OPTIONS AVAILABLE")
+        print("ENTER 'info' TO SEE MORE INFORMATION")
+        print("ENTER 'quit' TO END THE PROGRAM")
+        
+    options()
+    
+    #Starts calculator
+    while True:
+        user_input = input("\nINPUT YOUR COMMAND: ")
+        user_input = user_input.lower()
+        user_input = user_input.strip()
+
+        #Displays options again for fools
+        if user_input == "options":
+            pass
+
+        #Displays list of more operations
+        elif user_input == "more":
+            print("ENTER 'powers' TO RAISE A NUMBER TO THE POWER OF OTHER")
+            print("ENTER 'sqrt' TO FIND THE SQUARE ROOT")
+            print("ENTER 'percent' TO CALCULATE PERCENTAGE")
+            print("ENTER 'pi' FOR VALUE OF pi")
+            print("ENTER 'e' FOR VALUE OF e")
+            print("ENTER 'sin' TO FIND THE SINE VALUE")
+            print("ENTER 'cos' TO FIND THE COSINE VALUE")
+            print("ENTER 'tan' TO FIND THE TANGENT")
+            print("ENTER 'rand' TO GET A RANDOM NUMBER BETWEEN 0 AND 1")
+            print("ENTER 'randint' TO GET A RANDOM NUMBER BETWEEN TWO NUMBERS")
+            continue
+            
+        #Displays info
+        elif user_input == "info":
+            print("\nINFORMATION")
+            print("WELCOME TO THE INFORMATION WINDOW '" + Name + "'")
+            print("ENTER 'name' TO CHANGE YOUR NAME")
+            print("ENTER 'options' TO VIEW OPTIONS")
+            print("DECIMALS AND NEGATIVE NUMBERS ARE ALLOWED")
+            print("ERROR OCCURS DUE TO WRONG DATA TYPE")
+            continue
+            
+        #Exits
+        elif user_input == "quit":
+            print("\nTHANK YOU, " + Name + ",FOR USING THE CALCULATOR")
+            break
+            
+        #Changes name
+        elif user_input == "name":
+            change = input("\nWOULD YOU LIKE TO CHANGE YOUR NAME? YES OR NO:")
+            change=change.lower()
+            if change == "yes":
+                Name = input("ENTER YOUR NEW NAME:")
+                Name = Name.upper()
+                print("YOUR NAME IS SAVED AS " + Name)
+            elif change == "no":
+                print("YOUR NAME REMAINS " + Name)
+            else:
+                print("INVALID INPUT")    
+        
+        #Adds
+        elif user_input == "add":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(num1 + num2)
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Subtracts
+        elif user_input == "subtract":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(num1 - num2)
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Multiplies
+        elif user_input == "multiply":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(num1 * num2)
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Divides
+        elif user_input == "divide":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(num1 / num2)
+                print("\nTHE RESULT IS " + result)
+            except ZeroDivisionError:
+                print("An error has occurred due to zero division")
+            except (ValueError, TypeError):
+                print("ERROR")
+                
+        #Finds power
+        elif user_input == "powers":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(num1**num2)
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+                
+        #Finds square root
+        elif user_input == "sqrt":
+            try:
+                num1 = float(input("ENTER YOUR NUMBER:"))
+                result = str(math.sqrt(num1))
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Finds Percentage
+        elif user_input == "percent":
+            try:
+                num1 = float(input("ENTER YOUR NUMBER:"))
+                result = str(num1 / 100)
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Gives value of pi
+        elif user_input == "pi":
+                result = str(math.pi)
+                print("\nTHE RESULT IS " + result)
+        
+        #Gives value of e
+        elif user_input == "e":
+            result = str(math.e)
+            print("\nTHE RESULT IS " + result)
+        
+        #Gives sine value
+        elif user_input == "sin":
+            try:
+                num1 = float(input("ENTER YOUR NUMBER:"))
+                result = str(math.sin(num1))
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Gives cosine value
+        elif user_input == "cos":
+            try:
+                num1 = float(input("ENTER YOUR NUMBER:"))
+                result = str(math.cos(num1))
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Gives tangent
+        elif user_input == "tan":
+            try:
+                num1 = float(input("ENTER YOUR NUMBER:"))
+                result = str(math.tan(num1))
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        #Gives random number between 0 and 1
+        elif user_input == "rand": 
+            result = str(random.random())
+            print("\nTHE RESULT IS " + result)
+        
+        #Gives random number between two numbers
+        elif user_input == "randint":
+            try:
+                num1 = float(input("ENTER YOUR FIRST NUMBER:"))
+                num2 = float(input("ENTER YOUR SECOND NUMBER:"))
+                result = str(random.randint(num1, num2))
+                print("\nTHE RESULT IS " + result)
+            except (ValueError, TypeError):
+                print("ERROR")
+        
+        else:
+            print("Unknown input")
+
+        options()
+
+calculator()
