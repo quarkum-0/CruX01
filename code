@@ -2,10 +2,6 @@
 import math
 import random
 
-#Basic values
-pi = math.pi
-e = math.e
-
 def calculator():
 
     print("WELCOME!!!")
