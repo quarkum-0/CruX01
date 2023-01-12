@@ -8,7 +8,6 @@ e = math.e
 
 def calculator():
 
-    #Starts intro
     print("WELCOME!!!")
     Name = input("ENTER YOUR NAME: ")
     Name = Name.upper()
